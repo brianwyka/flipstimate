@@ -1,0 +1,11 @@
+#landing-page {
+    background: #303030;
+}
+#landing-page h1,
+#landing-page h2,
+#landing-page h3,
+#landing-page h4,
+#landing-page h5 {
+    color: #fff;
+    text-shadow: 1px 1px 4px #333;
+}

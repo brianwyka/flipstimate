@@ -1,0 +1,53 @@
+body {
+    
+}
+
+nav.top-bar ul.title-area li.name h1 a {
+	font-weight: bold;
+}
+
+#main {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+h4.cost {
+    color: #333;   
+}
+h4.zero {
+    color: #aaa; 
+}
+h3.sub-total {
+    margin: 0;
+    color: #37537F;
+}
+
+.spacer-small {
+	height: 1em;	
+}
+.spacer-medium {
+	height: 2em;
+}
+.spacer-large {
+	height: 4em;	
+}
+
+.panel-total {
+    border-color: #5cb85c;
+}
+.panel-total .panel-heading {
+  border-color: #5cb85c;
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+@media only screen and (max-width: 991px) {
+
+    .btn-block-sm {
+        display: block;
+    }
+    .btn-block-sm.btn-lg {
+        width: 100%;
+    }
+    
+}

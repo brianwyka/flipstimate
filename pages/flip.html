@@ -1,0 +1,98 @@
+<div class="container">
+    
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <h1 class="page-header" id="flip-name-editable" 
+                    data-ng-dblclick="editFlipName()">
+                    <span data-ng-show="!editingFlipName">{{flipName || '1 Easy Street'}}</span>
+                    <input type="text" id="flip-name-editable-input"
+                           class="form-control input-lg" 
+                           data-ng-blur="saveFlipName()"
+                           data-ng-show="editingFlipName"
+                           data-ng-model="flipName" 
+                           placeholder="What are you flipping?" />
+                </h1>
+            </div>
+            <div class="space-medium"></div>
+        </div>
+
+    </div>
+    
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 spacer-small"></div>
+
+    <div class="row" data-ng-repeat="(asKey, addedSpace) in addedSpaces">
+
+        <div class="col-lg-11 col-md-10 col-sm-12 col-lg-push-1 col-md-push-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{addedSpace.name || addedSpace.reference.title || '...'}}
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       data-ng-model="addedSpace.name" 
+                                       placeholder="Name or Label" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="form-group">
+                                <select class="form-control" 
+                                        data-ng-options="space.title for space in spaces track by space.uuid"
+                                        data-ng-change="changeSpace(addedSpace)" 
+                                        data-ng-model="addedSpace.reference"></select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12" data-ng-show="addedSpace.showCategories">
+                            <div class="row" data-ng-repeat="(acKey, addedCategory) in addedSpace.categories">
+                                <category />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="pull-left">
+                        <button type="button" class="btn btn-danger btn-sm" 
+                                data-ng-click="removeSpace(asKey)">
+                            Remove {{addedSpace.name || addedSpace.reference.title || '...'}}
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <h3 class="sub-total">{{addedSpace.totalCost | currency:"$"}}</h3>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-1 col-md-2 col-sm-12 col-lg-pull-11 col-md-pull-10">
+            <button type="button" class="btn btn-primary btn-lg btn-circle btn-block-sm" 
+               data-ng-show="asKey == addedSpaces.length - 1" 
+               data-ng-click="addSpace()">
+                <i class="fa fa-plus"></i>
+            </button>
+            <div class="spacer-small"></div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="panel panel-total">
+                <div class="panel-heading">
+                    <div class="huge text-right">{{totalCost | currency:"$"}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>

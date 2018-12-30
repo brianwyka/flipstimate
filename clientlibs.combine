@@ -1,0 +1,43 @@
+{
+    "combineOnSave": true,
+    "combine": [
+        {
+            "output": "resources/css/headlibs.min.css",
+            "files": [
+                "resources/thirdparty/bootstrap/css/bootstrap.min.css",
+                "resources/thirdparty/bootstrap/themes/stylish-portfolio/stylish-portfolio.css",
+                "resources/thirdparty/font-awesome/font-awesome.min.css",
+                "resources/css/global.css",
+                "resources/css/pages/*.css"
+            ]
+        },
+        {
+            "output": "resources/js/responsive.min.js",
+            "files": [
+                "resources/thirdparty/responsive/*.js"
+            ]
+        },
+        {
+            "output": "resources/js/headlibs.min.js",
+            "files": [
+                "resources/thirdparty/angular/angular.min.js",
+                "resources/thirdparty/angular/modules/*.js",
+                "resources/js/common.js",
+                "resources/js/routes.js",
+                "resources/js/filters.js",
+                "resources/js/directives.js",
+                "resources/js/factories/*.js",
+                "resources/js/services/*.js",
+                "resources/js/controllers/*.js"
+            ]
+        },
+        {
+            "output": "resources/js/bodylibs.min.js",
+            "files": [
+                "resources/thirdparty/jquery/jquery.min.js",
+                "resources/thirdparty/bootstrap/js/bootstrap.min.js",
+                "resources/thirdparty/jquery/jquery.bootstrap-spinner.min.js"
+            ]
+        }
+    ]
+}
